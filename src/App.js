@@ -1,5 +1,10 @@
 import React from 'react';
+
+/* modules */
 import axios from 'axios';
+
+/* components */
+import Movie from './Movie';
 
 class App extends React.Component {
   state = {
@@ -9,7 +14,8 @@ class App extends React.Component {
   };
 
   APIs = {
-    movieList: 'https://yts-proxy.now.sh/list_movies.json',
+    // 영화 리스트 평점 높은 순으로 정렬
+    movieList: 'https://yts-proxy.now.sh/list_movies.json?sort_by=rating',
   };
 
   appTimer = () => {
@@ -39,10 +45,37 @@ class App extends React.Component {
   }
 
   render() {
-    const { isLoading } = this.state;
+    const { isLoading, movies } = this.state;
     this.appTimer(); // Time test code
 
-    return <div>{isLoading ? 'Loading...' : 'We are ready'}</div>;
+    const Loading = () => {
+      return (
+        <div class="loader">
+          <p class="loader__text">'Loading...'</p>
+        </div>
+      );
+    };
+
+    const MovieList = () => {
+      return (
+        <div class="movies">
+          {movies.map((movie) => {
+            return (
+              <Movie
+                key={movie.id}
+                id={movie.id}
+                year={movie.year}
+                title={movie.title}
+                summary={movie.summary}
+                poster={movie.medium_cover_image}
+              />
+            );
+          })}
+        </div>
+      );
+    };
+
+    return <section class="container">{isLoading ? <Loading /> : <MovieList />}</section>;
   }
 }
 
