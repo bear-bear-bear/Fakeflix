@@ -6,6 +6,9 @@ import axios from 'axios';
 /* components */
 import Movie from './Movie';
 
+/* css */
+import './App.css';
+
 class App extends React.Component {
   state = {
     startTime: Date.now(),
