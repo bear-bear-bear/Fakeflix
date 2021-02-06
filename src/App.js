@@ -53,15 +53,15 @@ class App extends React.Component {
 
     const Loading = () => {
       return (
-        <div class="loader">
-          <p class="loader__text">'Loading...'</p>
+        <div className="loader">
+          <p className="loader__text">'Loading...'</p>
         </div>
       );
     };
 
     const MovieList = () => {
       return (
-        <div class="movies">
+        <div className="movies">
           {movies.map((movie) => {
             return (
               <Movie
@@ -79,7 +79,7 @@ class App extends React.Component {
       );
     };
 
-    return <section class="container">{isLoading ? <Loading /> : <MovieList />}</section>;
+    return <section className="container">{isLoading ? <Loading /> : <MovieList />}</section>;
   }
 }
 
