@@ -54,7 +54,7 @@ class Home extends React.Component {
     const Loading = () => {
       return (
         <div className="loader">
-          <p className="loader__text">'Loading...'</p>
+          <p className="loader__text">Loading...</p>
         </div>
       );
     };
