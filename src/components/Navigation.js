@@ -7,7 +7,7 @@ import './Navigation.css';
 
 const Navigation = () => {
   return (
-    <nav className="nav">
+    <nav className="app-nav">
       <ul>
         <li>
           <Link to="/">Home</Link>
