@@ -1,4 +1,49 @@
 .app-header {
   display: flex;
   justify-content: space-between;
+  padding: 1rem;
 }
+
+.header__logo {
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--red);
+  transform: skew(-10deg);
+}
+
+.header__nav {
+}
+
+.header__nav ul {
+  display: flex;
+}
+
+.header__nav li {
+}
+
+.header__nav li:nth-child(n + 2) {
+  margin-left: 0.5rem;
+}
+
+.header__nav a {
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+/* @media screen and (max-width: 1090px) {
+  .nav {
+    left: initial;
+    top: initial;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .nav ul {
+    padding: 1.5rem 1.33rem;
+  }
+} */
