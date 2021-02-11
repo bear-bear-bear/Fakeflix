@@ -15,29 +15,15 @@ class Home extends React.Component {
     movies: [],
   };
 
-  APIs = {
-    // 영화 리스트 평점 높은 순으로 정렬
-    movieList: 'https://yts-proxy.now.sh/list_movies.json?sort_by=rating',
-  };
-
-  appTimer = () => {
-    const { startTime } = this.state;
-    const endTime = Date.now();
-
-    console.log(`렌더링 시간간격: ${endTime - startTime}ms`);
-
-    this.startTime = endTime; // initial
-  };
-
   getMovies = async () => {
     const {
       data: {
         data: { movies },
       },
-    } = await axios.get(this.APIs.movieList);
+    } = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=rating');
 
     this.setState({
-      movies,
+      movies: movies,
       isLoading: false,
     });
   };
@@ -48,7 +34,6 @@ class Home extends React.Component {
 
   render() {
     const { isLoading, movies } = this.state;
-    this.appTimer(); // Time test code
 
     const Loading = () => {
       return (
