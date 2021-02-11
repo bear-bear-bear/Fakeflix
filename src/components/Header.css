@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   padding: 1rem;
   height: var(--header-height);
@@ -83,4 +83,11 @@
   text-decoration: none;
   text-transform: uppercase;
   color: var(--red);
+}
+
+@media screen and (max-width: 768.1px) {
+  .app-header {
+    flex-wrap: wrap;
+    padding: 0.5rem;
+  }
 }
