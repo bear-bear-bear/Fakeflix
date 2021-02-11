@@ -6,8 +6,6 @@
   padding: 1.2rem;
   border-radius: 5px;
   color: #adaeb9;
-  box-shadow: 0 0.8rem 1.66rem -0.33rem rgba(50, 50, 93, 0.25),
-    0 0.5rem 1rem -0.5rem rgba(0, 0, 0, 0.3), 0 0.33rem 1rem -0.33rem rgba(0, 0, 0, 0.025);
   opacity: 0;
   animation: fade-in 0.5s ease-in-out forwards;
 }
@@ -36,8 +34,6 @@
   width: 100%;
   max-width: 9.8rem;
   margin-right: 2.2rem;
-  box-shadow: 0 2.2rem 4.4rem -0.75rem rgba(50, 50, 93, 0.25),
-    0 1.1rem 2.2rem -1.1rem rgba(0, 0, 0, 0.3), 0 0.75rem 2.25rem -0.5rem rgba(0, 0, 0, 0.025);
 }
 
 .movie .movie__title,
