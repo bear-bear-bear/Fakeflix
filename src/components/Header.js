@@ -21,11 +21,7 @@ const Navigation = () => {
 };
 
 const Logo = () => {
-  return (
-    <Link to="/" className="header__logo">
-      fakeflix
-    </Link>
-  );
+  return <p className="header__logo">flix</p>;
 };
 
 const Header = () => {

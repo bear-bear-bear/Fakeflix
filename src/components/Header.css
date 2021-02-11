@@ -1,16 +1,59 @@
 .app-header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 1rem;
 }
 
 .header__logo {
+  position: relative;
   font-size: 2rem;
   font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: -0.05rem;
   color: var(--red);
-  transform: skew(-10deg);
+  pointer-events: none;
+  --logo-anime-duration: 2s;
+  --logo-anime-delay: 2s;
+  animation: fade-out-in var(--logo-anime-duration) ease forwards;
+  animation-delay: var(--logo-anime-delay);
+}
+
+.header__logo::before {
+  content: 'net';
+  animation: to-fake 0.1s forwards;
+  animation-delay: calc(var(--logo-anime-delay) + var(--logo-anime-duration) / 2);
+}
+
+@keyframes fade-out-in {
+  0% {
+    left: 0;
+    opacity: 1;
+  }
+
+  49% {
+    left: -30%;
+    opacity: 0;
+  }
+
+  50% {
+    left: 2%;
+  }
+
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes to-fake {
+  from {
+    content: 'net';
+  }
+  to {
+    content: 'fake';
+  }
 }
 
 .header__nav {

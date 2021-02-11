@@ -1,4 +1,5 @@
 .movies .movie {
+  position: relative;
   background-color: white;
   margin-bottom: 3rem;
   font-weight: 300;
@@ -7,6 +8,18 @@
   color: #adaeb9;
   box-shadow: 0 0.8rem 1.66rem -0.33rem rgba(50, 50, 93, 0.25),
     0 0.5rem 1rem -0.5rem rgba(0, 0, 0, 0.3), 0 0.33rem 1rem -0.33rem rgba(0, 0, 0, 0.025);
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .movie a {
