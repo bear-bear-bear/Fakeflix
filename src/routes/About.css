@@ -19,5 +19,8 @@
 
 .about__container span:last-child {
   display: block;
+  margin-top: 1.66rem;
+  margin-right: 1.66rem;
   font-size: 0.66rem;
+  text-align: end;
 }
