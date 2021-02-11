@@ -18,7 +18,7 @@ const Movie = ({ title, year, summary, poster, genres }) => {
             );
           })}
         </ul>
-        <p className="movie__summary">{summary}</p>
+        <p className="movie__summary">{summary.slice(0, 180)}...</p>
       </div>
     </article>
   );
