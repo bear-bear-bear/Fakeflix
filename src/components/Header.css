@@ -14,7 +14,7 @@
 
 .header__logo {
   position: relative;
-  font-size: 2.33rem;
+  font-size: 2.8rem;
   font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
@@ -74,11 +74,11 @@
 }
 
 .header__nav li:nth-child(n + 2) {
-  margin-left: 0.5rem;
+  margin-left: 0.66rem;
 }
 
 .header__nav a {
-  font-size: 1.2rem;
+  font-size: 1.33rem;
   font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
