@@ -1,6 +1,5 @@
-import React from 'react';
-
 /* modules */
+import React from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 
 /* components */

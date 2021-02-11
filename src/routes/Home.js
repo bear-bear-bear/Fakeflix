@@ -1,6 +1,5 @@
-import React from 'react';
-
 /* modules */
+import React from 'react';
 import axios from 'axios';
 
 /* components */
