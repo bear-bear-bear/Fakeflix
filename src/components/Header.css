@@ -10,7 +10,7 @@
   padding-bottom: 1.33rem;
   height: var(--header-height);
   background-color: var(--black);
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .header__logo {
