@@ -4,6 +4,7 @@ import axios from 'axios';
 
 /* components */
 import Movie from '../components/Movie';
+import Loading from '../components/Loading';
 
 /* css */
 import './Home.css';
@@ -35,14 +36,6 @@ class Home extends React.Component {
   render() {
     const { isLoading, movies } = this.state;
 
-    const Loading = () => {
-      return (
-        <div className="loader">
-          <p className="loader__text">Loading...</p>
-        </div>
-      );
-    };
-
     const MovieList = () => {
       return (
         <div className="movies">
@@ -63,7 +56,9 @@ class Home extends React.Component {
       );
     };
 
-    return <section className="home">{isLoading ? <Loading /> : <MovieList />}</section>;
+    return (
+      <section className="home">{isLoading ? <Loading msg="Loading..." /> : <MovieList />}</section>
+    );
   }
 }
 
