@@ -49,23 +49,24 @@ class Detail extends React.Component {
       const { isLoading, info } = this.state;
 
       return (
-        <article className="detail">
+        <section className="detail">
           {isLoading ? (
             <Loading msg="Loading..." />
           ) : (
             <Info
-              title={info.title_long}
+              title={info.title_english}
+              year={info.year}
               genres={info.genres}
               desc={info.description_full}
-              backImgPath={info.background_image}
-              coverImgPath={info.large_cover_image}
+              backImgSRC={info.background_image}
+              coverImgSRC={info.large_cover_image}
               rating={info.rating}
               runtime={info.runtime}
               casts={info.cast}
-              trailer={info.yt_trailer_code}
+              trailerCode={info.yt_trailer_code}
             />
           )}
-        </article>
+        </section>
       );
     } else {
       return null;
