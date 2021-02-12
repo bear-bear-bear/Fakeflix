@@ -1,9 +1,18 @@
 /* modules */
 import React from 'react';
 import PropTypes from 'prop-types';
+import noImage from '../image/no-image.jpg';
 
 /* css */
 import './Info.css';
+
+const Rating = ({ rating }) => {
+  // rating: 0~10
+  const starNum = Math.round(rating / 2);
+  const stars = '★'.repeat(starNum);
+
+  return <span className="info__rating">{stars}</span>;
+};
 
 const Genre = ({ genres }) => {
   return (
@@ -17,21 +26,25 @@ const Genre = ({ genres }) => {
   );
 };
 
-const Picture = ({ src, name }) => {
-  const className = 'info__' + name;
-
-  return <img src={src} alt={name} className={className}></img>;
+const Desc = ({ desc }) => {
+  return (
+    <div className="info__desc">
+      <p>{desc && `Official Trailer: ${desc}`}</p>
+    </div>
+  );
 };
 
 const Casts = ({ casts }) => {
+  if (casts === undefined) return null;
+
   const Cast = ({ cast }) => {
     const { name, character_name: char_name, url_small_image: imgSRC } = cast;
 
     return (
       <li className="info__cast">
-        <img src={imgSRC} alt={name}></img>
-        <p>name: {name}</p>
-        <p>character: {char_name}</p>
+        <img src={imgSRC || noImage} alt=""></img>
+        <p>{name}</p>
+        <p>{char_name}</p>
       </li>
     );
   };
@@ -45,48 +58,21 @@ const Casts = ({ casts }) => {
   );
 };
 
-const Trailer = ({ title, code }) => {
-  const src = `https://www.youtube.com/embed/${code}?autoplay=1&mute=1`;
-
+const Info = ({ coverImgSRC, title, year, genres, desc, rating, runtime, casts }) => {
   return (
-    <iframe
-      className="detail__trailer"
-      title={title}
-      width="560"
-      height="315"
-      src={src}
-      frameBorder="0"
-      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    ></iframe>
-  );
-};
-
-const Info = ({
-  title,
-  year,
-  genres,
-  desc,
-  backImgSRC,
-  coverImgSRC,
-  rating,
-  runtime,
-  casts,
-  trailerCode,
-}) => {
-  return (
-    // temp code
     <article className="info">
-      <h1 className="info__title">{title}</h1>
-      <p className="info__rating">{rating}</p>
-      <p className="info__year">{year}</p>
-      <Genre genres={genres} />
-      <p className="info__runtime">{runtime}m</p>
-      <p className="info__desc">{desc}</p>
-      <Picture src={backImgSRC} name="back-image" />
-      <Picture src={coverImgSRC} name="cover-image" />
+      <section className="info__summary">
+        <img className="info__cover" src={coverImgSRC || noImage} alt={title}></img>
+        <section className="info__summary__text-wrap">
+          <h1 className="info__title">{title}</h1>
+          <Rating rating={rating} />
+          <span className="info__year">{year}</span>
+          {runtime !== 0 && <span className="info__runtime">{runtime}m</span>}
+          <Genre genres={genres} />
+        </section>
+      </section>
+      {desc && <Desc desc={desc} />}
       <Casts casts={casts} />
-      <Trailer title={title} code={trailerCode} />
     </article>
   );
 };
@@ -96,12 +82,10 @@ Info.propTypes = {
   year: PropTypes.number.isRequired,
   genres: PropTypes.arrayOf(PropTypes.string).isRequired,
   desc: PropTypes.string.isRequired,
-  backImgSRC: PropTypes.string.isRequired,
   coverImgSRC: PropTypes.string.isRequired,
   rating: PropTypes.number.isRequired,
   runtime: PropTypes.number.isRequired,
   casts: PropTypes.arrayOf(PropTypes.object).isRequired,
-  trailerCode: PropTypes.string.isRequired,
 };
 
 export default Info;

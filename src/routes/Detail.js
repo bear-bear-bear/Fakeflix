@@ -4,6 +4,7 @@ import axios from 'axios';
 
 /* components */
 import Info from '../components/Info';
+import Trailer from '../components/Trailer';
 import Loading from '../components/Loading';
 
 /* css */
@@ -48,24 +49,23 @@ class Detail extends React.Component {
     if (!!location.state) {
       const { isLoading, info } = this.state;
 
-      return (
+      return isLoading ? (
         <section className="detail">
-          {isLoading ? (
-            <Loading msg="Loading..." />
-          ) : (
-            <Info
-              title={info.title_english}
-              year={info.year}
-              genres={info.genres}
-              desc={info.description_full}
-              backImgSRC={info.background_image}
-              coverImgSRC={info.large_cover_image}
-              rating={info.rating}
-              runtime={info.runtime}
-              casts={info.cast}
-              trailerCode={info.yt_trailer_code}
-            />
-          )}
+          <Loading msg="Loading..." />
+        </section>
+      ) : (
+        <section className="detail">
+          <Info
+            title={info.title_english}
+            year={info.year}
+            genres={info.genres}
+            desc={info.description_full}
+            coverImgSRC={info.large_cover_image}
+            rating={info.rating}
+            runtime={info.runtime}
+            casts={info.cast}
+          />
+          <Trailer title={info.title_english} trailerCode={info.yt_trailer_code} />
         </section>
       );
     } else {
