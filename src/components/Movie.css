@@ -1,7 +1,4 @@
 .movies .movie {
-  /* width: 22rem;
-  height: 35rem; */
-  /* opacity: 0; */
   animation: fade-in 0.5s ease-in-out forwards;
 }
 
@@ -20,11 +17,14 @@
   height: 100%;
 }
 
-@media screen and (max-width: 768.1px) {
+@media screen and (max-width: 768px) {
   .movies .movie {
     width: 100%;
     height: auto;
     margin-left: initial;
+  }
+
+  .movies .movie:not(:first-child) {
     margin-top: 1rem;
   }
 

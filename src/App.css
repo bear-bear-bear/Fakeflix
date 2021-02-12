@@ -10,6 +10,36 @@ html {
   height: 100%;
 }
 
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 15.5px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 15.5px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 14.5px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  html {
+    font-size: 14.5px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 14px;
+  }
+}
+
 body {
   width: 100%;
   height: 100%;
