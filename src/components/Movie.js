@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom';
 /* css */
 import './Movie.css';
 
-const Movie = ({ title, year, summary, poster, genres }) => {
+const Movie = ({ id, title, poster }) => {
   return (
     <Link
       className="movie"
       to={{
         pathname: '/movie-detail',
-        state: { title, year, summary, poster, genres },
+        state: { id },
       }}
     >
       <img src={poster} alt={title} title={title}></img>
@@ -21,11 +21,9 @@ const Movie = ({ title, year, summary, poster, genres }) => {
 };
 
 Movie.propTypes = {
-  year: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  summary: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired,
-  genres: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Movie;

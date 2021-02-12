@@ -1,15 +1,44 @@
 /* modules */
 import React from 'react';
+import axios from 'axios';
+
+/* components */
+import Info from '../components/Info';
+import Loading from '../components/Loading';
 
 /* css */
 import './Detail.css';
 
 class Detail extends React.Component {
+  state = {
+    info: null,
+    isLoading: true,
+  };
+
+  getMovieInfos = async (id) => {
+    const {
+      data: {
+        data: { movie: info },
+      },
+    } = await axios.get(
+      `https://yts.mx/api/v2/movie_details.json?movie_id=${id}&with_images=true&with_cast=true`
+    );
+
+    this.setState({
+      info: info,
+      isLoading: false,
+    });
+  };
+
   componentDidMount() {
     const { location, history } = this.props;
 
     if (location.state === undefined) {
       history.push('/');
+    } else {
+      const { id } = location.state;
+
+      this.getMovieInfos(id);
     }
   }
 
@@ -17,26 +46,25 @@ class Detail extends React.Component {
     const { location } = this.props;
 
     if (!!location.state) {
-      const { title, year, summary, poster, genres } = location.state;
+      const { isLoading, info } = this.state;
 
       return (
-        //TODO: 트레일러 영상 추가
         <article className="detail">
-          <img src={poster} alt={title} title={title}></img>
-          <div className="detail__data">
-            <h3 className="detail__title">{title}</h3>
-            <h5 className="detail__year">{year}</h5>
-            <ul className="detail__genres">
-              {genres.map((genre, idx) => {
-                return (
-                  <li key={idx} className="detail__genre">
-                    {genre}
-                  </li>
-                );
-              })}
-            </ul>
-            <p className="detail__summary">{summary.slice(0, 180)}...</p>
-          </div>
+          {isLoading ? (
+            <Loading msg="Loading..." />
+          ) : (
+            <Info
+              title={info.title_long}
+              genres={info.genres}
+              desc={info.description_full}
+              backImgPath={info.background_image}
+              coverImgPath={info.large_cover_image}
+              rating={info.rating}
+              runtime={info.runtime}
+              casts={info.cast}
+              trailer={info.yt_trailer_code}
+            />
+          )}
         </article>
       );
     } else {
