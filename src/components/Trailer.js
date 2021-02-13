@@ -7,8 +7,9 @@ import './Trailer.css';
 
 const Trailer = ({ title, trailerCode }) => {
   const src = `https://www.youtube.com/embed/${trailerCode}?autoplay=1&mute=1`;
+  const isTrailer = Boolean(trailerCode);
 
-  return (
+  return isTrailer ? (
     <iframe
       className="trailer"
       title={title}
@@ -17,6 +18,8 @@ const Trailer = ({ title, trailerCode }) => {
       allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
     ></iframe>
+  ) : (
+    <div className="trailer trailer--none"></div>
   );
 };
 

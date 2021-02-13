@@ -14,6 +14,24 @@
   }
 }
 
+.trailer--none {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.03);
+  animation: none !important;
+}
+
+.trailer--none::after {
+  content: '⛔ There is no Trailer';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+  font-weight: 300;
+  font-size: 1.1rem;
+  letter-spacing: 0.05rem;
+}
+
 @media screen and (max-width: 768px) {
   .trailer {
     margin-top: 1rem;
