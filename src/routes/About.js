@@ -1,18 +1,17 @@
 /* modules */
 import React from 'react';
 
+/* components */
+import Card from '../components/Card';
+
 /* css */
 import './About.css';
 
 const About = () => {
   return (
-    <article className="about__container">
-      <span>
-        "Freedom is the freedom to say that two plus two make four. If that is granted, all else
-        follows."
-      </span>
-      <span>- George Orwell, 1984</span>
-    </article>
+    <section className="about">
+      <Card />
+    </section>
   );
 };
 
