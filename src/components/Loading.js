@@ -5,16 +5,14 @@ import PropTypes from 'prop-types';
 /* css */
 import './Loading.css';
 
-const Loading = ({ msg }) => {
+const Loading = () => {
   return (
-    <div className="loader">
-      <p className="loader__text">{msg}</p>
-    </div>
+    <article className="loader">
+      <div className="loader__circle"></div>
+      <div className="loader__circle"></div>
+      <div className="loader__circle"></div>
+    </article>
   );
-};
-
-Loading.propTypes = {
-  msg: PropTypes.string.isRequired,
 };
 
 export default Loading;

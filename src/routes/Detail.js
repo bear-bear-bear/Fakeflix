@@ -51,7 +51,7 @@ class Detail extends React.Component {
 
       return isLoading ? (
         <section className="detail">
-          <Loading msg="Loading..." />
+          <Loading />
         </section>
       ) : (
         <section className="detail">
