@@ -12,6 +12,20 @@
   gap: 1rem;
 }
 
+.movies--first-call {
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 768.1px) {
   .home {
     width: 100%;

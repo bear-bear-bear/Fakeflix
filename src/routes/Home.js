@@ -14,28 +14,34 @@ class Home extends React.Component {
   state = {
     startTime: Date.now(),
     isLoading: true,
+    isFirstFetch: true,
     movies: [],
-  };
-
-  fetchFunc = () => {
-    console.log('fetch');
+    page: 1,
   };
 
   getMovies = async () => {
+    const limit = 50;
+    const { movies, page } = this.state;
+
     const {
       data: {
-        data: { movies },
+        data: { movies: newMovies },
       },
-    } = await axios.get('https://yts-proxy.now.sh/list_movies.json?limit=50&sort_by=rating');
+    } = await axios.get(
+      `https://yts-proxy.now.sh/list_movies.json?limit=${limit}&page=${page}&sort_by=rating`
+    );
 
     this.setState({
-      movies: movies,
       isLoading: false,
+      isFirstFetch: page === 1 ? true : false,
+      movies: [...movies, ...newMovies],
+      page: page + 1,
     });
   };
 
   componentDidMount() {
     this.getMovies();
+    infinityScroll.on(() => this.getMovies());
   }
 
   componentWillUnmount() {
@@ -43,16 +49,17 @@ class Home extends React.Component {
   }
 
   render() {
-    const { isLoading, movies } = this.state;
-    if (!isLoading) infinityScroll.on(() => this.fetchFunc());
+    const { isLoading, isFirstFetch, movies, page } = this.state;
+
+    console.log(isFirstFetch);
 
     const MovieList = () => {
       return (
-        <div className="movies">
+        <div className={isFirstFetch ? 'movies movies--first-call' : 'movies'}>
           {movies.map((movie) => {
             return (
               <Movie
-                key={movie.id}
+                key={`page${page}_${movie.id}`}
                 id={movie.id}
                 title={movie.title}
                 poster={movie.large_cover_image}

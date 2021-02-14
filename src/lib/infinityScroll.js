@@ -30,7 +30,7 @@ const infinityScroll = {
         console.log('이벤트 호출 횟수: ', ++this.cnt); //test
 
         const scrollTop = this.getScrollTop();
-        const fetchPoint = (this.getDocumentHeight() - window.innerHeight) * (4 / 5);
+        const fetchPoint = (this.getDocumentHeight() - window.innerHeight) * (1 / 2);
 
         // 스크롤 80퍼센트를 넘어야 데이터 가져오기
         if (scrollTop < fetchPoint) return;
