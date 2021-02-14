@@ -1,16 +1,14 @@
-# React Movie App
+# Fakeflix
 
-React JS Fundamentals Course
+##### React JS Fundamentals Project
 
 ---
 
-This project is updating...
+<img src="https://github.com/bear-bear-bear/Fakeflix/blob/master/src/image/preview.PNG" width="50%" style="margin: 0 auto;">
 
------------------------------------------------------
-## 할 일
-
-> - [x] 상세보기 페이지 구현 (기존 정보에 트레일러 영상 추가)
-> - [x] ABOUT 페이지 구현 (영화 정보에 대한 저작권 표시, 깃허브 링크 표시)
-> - [X] 메인 페이지 무한 스크롤 구현
-> - [ ] 로딩 안하고, 이전에 불러온 영화 데이터 그대로 유지할 방법 찾아보기
-> - [X] 로딩 컴포넌트 개선
+- Go to website → <a href="https://github.com/bear-bear-bear/Fakeflix">Fakeflix 바로가기</a>
+  <br/><br/>
+- 사용된 스택
+  - html
+  - css
+  - js (React)
