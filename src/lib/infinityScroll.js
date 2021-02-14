@@ -27,7 +27,7 @@ const infinityScroll = {
     if (this.timer === null) {
       this.timer = setTimeout(() => {
         this.timer = null;
-        console.log('이벤트 호출 횟수: ', ++this.cnt); //test
+        // console.log('스크롤 감지 이벤트 호출 횟수: ', ++this.cnt); //test
 
         const scrollTop = this.getScrollTop();
         const fetchPoint = (this.getDocumentHeight() - window.innerHeight) * (1 / 2);

@@ -51,8 +51,6 @@ class Home extends React.Component {
   render() {
     const { isLoading, isFirstFetch, movies, page } = this.state;
 
-    console.log(isFirstFetch);
-
     const MovieList = () => {
       return (
         <div className={isFirstFetch ? 'movies movies--first-call' : 'movies'}>
