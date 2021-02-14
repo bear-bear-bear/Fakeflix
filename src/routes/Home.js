@@ -1,6 +1,7 @@
 /* modules */
 import React from 'react';
 import axios from 'axios';
+import infinityScroll from '../lib/infinityScroll';
 
 /* components */
 import Movie from '../components/Movie';
@@ -14,10 +15,11 @@ class Home extends React.Component {
     startTime: Date.now(),
     isLoading: true,
     movies: [],
-    page: 1,
   };
 
-  infiniteScroll = () => {};
+  fetchFunc = () => {
+    console.log('fetch');
+  };
 
   getMovies = async () => {
     const {
@@ -36,8 +38,13 @@ class Home extends React.Component {
     this.getMovies();
   }
 
+  componentWillUnmount() {
+    infinityScroll.off();
+  }
+
   render() {
     const { isLoading, movies } = this.state;
+    if (!isLoading) infinityScroll.on(() => this.fetchFunc());
 
     const MovieList = () => {
       return (
