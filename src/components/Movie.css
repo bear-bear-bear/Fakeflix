@@ -12,12 +12,4 @@
     height: auto;
     margin-left: initial;
   }
-
-  .movies .movie:not(:first-child) {
-    margin-top: 1rem;
-  }
-
-  .movie img {
-    height: auto;
-  }
 }
