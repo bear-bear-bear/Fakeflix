@@ -68,7 +68,6 @@ class Home extends React.Component {
       );
     };
 
-    // return <section className="home">{isLoading ? <Loading /> : <Loading />}</section>;
     return <section className="home">{isLoading ? <Loading /> : <MovieList />}</section>;
   }
 }
