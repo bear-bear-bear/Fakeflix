@@ -12,7 +12,6 @@ import './Home.css';
 
 class Home extends React.Component {
   state = {
-    startTime: Date.now(),
     isLoading: true,
     isFirstFetch: true,
     movies: [],
