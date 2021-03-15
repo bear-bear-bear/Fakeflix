@@ -8,6 +8,7 @@
   justify-content: space-between;
   padding: 1rem;
   padding-bottom: 1.33rem;
+  border-bottom: 3px solid #222;
   height: var(--header-height);
   background-color: var(--black);
   opacity: 0.95;
