@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/fakeflix/static/css/main.553e5720.chunk.css",
+    "main.css": "/fakeflix/static/css/main.da815fe8.chunk.css",
     "main.js": "/fakeflix/static/js/main.382129b9.chunk.js",
     "main.js.map": "/fakeflix/static/js/main.382129b9.chunk.js.map",
     "runtime-main.js": "/fakeflix/static/js/runtime-main.e8bb2360.js",
@@ -8,13 +8,13 @@
     "static/js/2.5aa2a9cf.chunk.js": "/fakeflix/static/js/2.5aa2a9cf.chunk.js",
     "static/js/2.5aa2a9cf.chunk.js.map": "/fakeflix/static/js/2.5aa2a9cf.chunk.js.map",
     "index.html": "/fakeflix/index.html",
-    "static/css/main.553e5720.chunk.css.map": "/fakeflix/static/css/main.553e5720.chunk.css.map",
+    "static/css/main.da815fe8.chunk.css.map": "/fakeflix/static/css/main.da815fe8.chunk.css.map",
     "static/js/2.5aa2a9cf.chunk.js.LICENSE.txt": "/fakeflix/static/js/2.5aa2a9cf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e8bb2360.js",
     "static/js/2.5aa2a9cf.chunk.js",
-    "static/css/main.553e5720.chunk.css",
+    "static/css/main.da815fe8.chunk.css",
     "static/js/main.382129b9.chunk.js"
   ]
 }
