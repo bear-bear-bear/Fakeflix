@@ -4,4 +4,4 @@
 
 ---
     
-<img src="https://github.com/bear-bear-bear/fakeflix/blob/master/src/image/preview.PNG" width="50%">
+<img src="https://github.com/bear-bear-bear/fakeflix/blob/master/src/image/preview.PNG" width="80%">
